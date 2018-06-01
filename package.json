@@ -6,6 +6,9 @@
   "files": [
     "lib"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "rollup -c rollup.config.cjs.js --watch",
     "clean": "rm -rf ./lib",
