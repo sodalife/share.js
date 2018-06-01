@@ -11,7 +11,13 @@ npm i --save @sodalife/share.js
 import share = require('@sodalife/share.js')
 
 // basic sharing
-share.set({
+share.set('all', {
+  title: '@sodalife/share.js',
+  description: 'set up sharing with ease',
+  url: 'https://github.com/sodalife',
+  thumbnail: 'https://avatars0.githubusercontent.com/u/31095819?s=400&v=4',
+})
+share.set('wx:moment', {
   title: '@sodalife/share.js',
   description: 'set up sharing with ease',
   url: 'https://github.com/sodalife',
@@ -42,10 +48,10 @@ The ``share`` object is an EventEmitter instance. See the offical Node.js docume
 
 [https://nodejs.org/api/events.html](https://nodejs.org/api/events.html)
 
-### share.set(config)
+### share.set(target, data)
 Set up basic sharing.
 
-**config object**:
+**data object**:
 
 - title
 - description
@@ -61,11 +67,12 @@ Set up basic sharing.
 ### TARGETS
 |    target     |      value      |
 | ------------- | --------------- |
-| 微信 - 好友   | `wechat:chat`   |
-| 微信 - 朋友圈 | `wechat:moment` |
-| QQ            | `qq`            |
-| 腾讯微博      | `tecent-weibo`  |
-| QQ 空间       | `qzone`         |
+| 全部          | `'all'`           |
+| 微信 - 好友   | `'wechat:chat'`   |
+| 微信 - 朋友圈 | `'wechat:moment'` |
+| QQ            | `'qq'`            |
+| 腾讯微博      | `'tecent-weibo'`  |
+| QQ 空间       | `'qzone'`         |
 
 ## License
 MIT @ [yelo](https://github.com/imyelo)

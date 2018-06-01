@@ -1,0 +1,61 @@
+{
+  "name": "@sodalife/share.js",
+  "version": "0.0.0",
+  "description": "use Soda built-in services to set up sharing with ease",
+  "main": "lib/share.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "start": "rollup -c rollup.config.cjs.js --watch",
+    "clean": "rm -rf ./lib",
+    "prebuild": "run-s clean",
+    "build": "run-s build:rollup:* build:minify",
+    "build:rollup:cjs": "rollup -c rollup.config.cjs.js",
+    "build:rollup:umd": "rollup -c rollup.config.umd.js",
+    "build:minify": "uglifyjs --compress --mangle --output ./lib/share.umd.min.js -- ./lib/share.umd.js",
+    "prepublishOnly": "npm run build",
+    "release": "np"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sodalife/share.js.git"
+  },
+  "keywords": [
+    "share",
+    "wechat",
+    "sodalife"
+  ],
+  "author": "yelo <zhihuzeye@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sodalife/share.js/issues"
+  },
+  "homepage": "https://github.com/sodalife/share.js#readme",
+  "devDependencies": {
+    "@yelo/rollup-node-external": "^1.0.1",
+    "babel-core": "^6.26.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "cross-env": "^5.1.6",
+    "deepmerge": "^2.1.1",
+    "np": "^3.0.1",
+    "npm-run-all": "^4.1.3",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.59.4",
+    "rollup-plugin-babel": "^3.0.4",
+    "rollup-plugin-commonjs": "^9.1.3",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "uglify-js": "^3.3.28"
+  },
+  "dependencies": {
+    "eventemitter3": "^3.1.0",
+    "load-script": "^1.0.0",
+    "p-debounce": "^1.0.0",
+    "p-timeout": "^2.0.1",
+    "pify": "^3.0.0",
+    "unfetch": "^3.0.0"
+  }
+}
