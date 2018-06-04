@@ -21,7 +21,7 @@ export default function setWechatShare (target, data, listener) {
     desc: data.description,
     link: data.url,
     imgUrl: data.thumbnail,
-    success: listener.shared,
+    success: () => listener.shared(target),
     cancel: listener.cancel,
   }
   if (!method) {

@@ -7,7 +7,7 @@ class Share extends EventEmitter {
     super()
 
     this._listener = {
-      shared: () => this.emit('shared'),
+      shared: (target) => this.emit('shared', target),
       cancel: () => this.emit('cancel'),
     }
   }
