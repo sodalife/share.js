@@ -1,6 +1,6 @@
 {
   "name": "@sodalife/share.js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "use Soda built-in services to set up sharing with ease",
   "main": "lib/share.js",
   "files": [
