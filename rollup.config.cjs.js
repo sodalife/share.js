@@ -20,6 +20,6 @@ export default merge(base, {
     }),
   ],
   external: external({
-    whitelist: ['p-timeout'],
+    whitelist: ['p-debounce', 'p-finally', 'p-timeout', 'pify'],
   }),
 })
